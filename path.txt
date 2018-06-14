@@ -1,0 +1,32 @@
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+                  authors GET    /authors(.:format)                                                                       authors#index
+                          POST   /authors(.:format)                                                                       authors#create
+               new_author GET    /authors/new(.:format)                                                                   authors#new
+              edit_author GET    /authors/:id/edit(.:format)                                                              authors#edit
+                   author GET    /authors/:id(.:format)                                                                   authors#show
+                          PATCH  /authors/:id(.:format)                                                                   authors#update
+                          PUT    /authors/:id(.:format)                                                                   authors#update
+                          DELETE /authors/:id(.:format)                                                                   authors#destroy
+                  formats GET    /formats(.:format)                                                                       formats#index
+                          POST   /formats(.:format)                                                                       formats#create
+               new_format GET    /formats/new(.:format)                                                                   formats#new
+              edit_format GET    /formats/:id/edit(.:format)                                                              formats#edit
+                   format GET    /formats/:id(.:format)                                                                   formats#show
+                          PATCH  /formats/:id(.:format)                                                                   formats#update
+                          PUT    /formats/:id(.:format)                                                                   formats#update
+                          DELETE /formats/:id(.:format)                                                                   formats#destroy
+                    books GET    /books(.:format)                                                                         books#index
+                          POST   /books(.:format)                                                                         books#create
+                 new_book GET    /books/new(.:format)                                                                     books#new
+                edit_book GET    /books/:id/edit(.:format)                                                                books#edit
+                     book GET    /books/:id(.:format)                                                                     books#show
+                          PATCH  /books/:id(.:format)                                                                     books#update
+                          PUT    /books/:id(.:format)                                                                     books#update
+                          DELETE /books/:id(.:format)                                                                     books#destroy
+                   report GET    /report(.:format)                                                                        books#report
+                     root GET    /                                                                                        books#index
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

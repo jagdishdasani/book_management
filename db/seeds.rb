@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+format_list = [
+ ["Hardcover", "Hardcover"],
+ ["Softcover", "Softcover"],
+ ["Digital", "Digital"]
+]
+
+format_list.each do |name, desc|
+  Format.create( name: name, description: desc )
+end
+
+
