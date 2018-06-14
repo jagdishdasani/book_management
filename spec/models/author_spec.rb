@@ -14,5 +14,16 @@
 require 'rails_helper'
 
 RSpec.describe Author, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:author) { build :author }
+
+  describe '#' do
+    it "is valid with valid attributes" do
+      expect(author).to be_valid
+    end
+
+    it "unique name" do
+      create(:author)
+      expect(author).to be_invalid
+    end
+  end
 end

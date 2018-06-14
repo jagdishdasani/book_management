@@ -24,5 +24,20 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  let(:book) { create :book }
+
+
+  describe 'Authors' do
+    it 'has authors' do
+      expect(book.authors.count).to eq(1)
+    end
+
+    it 'has book authors' do
+      expect(book.book_authors.count).to eq(1)
+    end
+  end
+
+
+
 end

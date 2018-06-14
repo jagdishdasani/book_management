@@ -23,6 +23,6 @@
 
 FactoryBot.define do
   factory :book_author do
-    
+    association :author, factory: :author
   end
 end

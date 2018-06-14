@@ -14,5 +14,17 @@
 require 'rails_helper'
 
 RSpec.describe Format, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  let(:format) { build :format }
+
+  describe '#' do
+    it "is valid with valid attributes" do
+      expect(format).to be_valid
+    end
+
+    it "unique name" do
+      create(:format)
+      expect(format).to be_invalid
+    end
+  end
 end

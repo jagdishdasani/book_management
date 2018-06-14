@@ -16,9 +16,4 @@ FactoryBot.define do
     name "MyString"
     description "MyString"
   end
-
-  factory :invalid_author do
-    name nil
-    description nil
-  end
 end
