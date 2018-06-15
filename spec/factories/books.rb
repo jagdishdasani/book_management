@@ -23,7 +23,7 @@
 
 FactoryBot.define do
   factory :book do
-    title "MyString"
+    sequence(:title) {|n| "Name #{n}" }
     release_date Date.today
     base_price 100
     format_id Format.first.id

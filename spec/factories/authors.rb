@@ -13,7 +13,7 @@
 
 FactoryBot.define do
   factory :author do
-    name "MyString"
-    description "MyString"
+    sequence(:name) {|n| "Name #{n}" }
+    sequence(:description) {|n| "Description #{n}" }
   end
 end

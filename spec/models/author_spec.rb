@@ -14,15 +14,15 @@
 require 'rails_helper'
 
 RSpec.describe Author, type: :model do
-  let(:author) { build :author }
+  let!(:author) { create :author }
 
   describe '#' do
     it "is valid with valid attributes" do
       expect(author).to be_valid
     end
 
-    it "unique name" do
-      create(:author)
+    it "is invalid as unique name" do
+      author = create(:author, name: "Name 1")
       expect(author).to be_invalid
     end
   end

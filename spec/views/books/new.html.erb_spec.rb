@@ -4,10 +4,9 @@ require 'rails_helper'
 
 RSpec.describe "books/new", type: :view do
   before(:each) do
-    assign(:book, Book.new(
-      :title => "MyString",
-      :base_price => 1
-    ))
+    @book = FactoryBot.build(:book)
+    @formats = Format.all
+    @authors = Author.all
   end
 
   it "renders new book form" do

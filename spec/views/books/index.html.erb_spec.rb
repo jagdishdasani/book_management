@@ -4,21 +4,15 @@ require 'rails_helper'
 
 RSpec.describe "books/index", type: :view do
   before(:each) do
-    assign(:books, [
-      Book.create!(
-        :title => "Title",
-        :base_price => 2
-      ),
-      Book.create!(
-        :title => "Title",
-        :base_price => 2
-      )
-    ])
+    @books = FactoryBot.create_list(:book, 2)
+    assign(:books, @books)
+
   end
 
   it "renders a list of books" do
+    allow(view).to receive_messages(:will_paginate => nil)
     render
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
+    expect(rendered).to match /Name 1/
+    expect(rendered).to match /Name 2/
   end
 end
